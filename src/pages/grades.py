@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.join(Path(__file__).parents[1]))
 
 from mongo_connection import MongoConnection
 
-grades = MongoConnection
+grades = MongoConnection()
 
 df = pd.DataFrame(list(grades.student_grades.find()))
 
@@ -20,4 +20,5 @@ st.write('''
          You will need to select the period to retrieve the corresponding grade.
          '''
          )
-
+#st.dataframe(df.iloc[:,-3:])
+st.dataframe(df)
